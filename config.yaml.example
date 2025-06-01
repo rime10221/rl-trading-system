@@ -1,0 +1,48 @@
+# Binance API 설정
+api:
+  key: "YOUR_API_KEY"
+  secret: "YOUR_API_SECRET"
+  testnet: true  # 테스트넷 사용 여부
+
+# 텔레그램 알림 설정
+telegram:
+  token: "YOUR_TELEGRAM_BOT_TOKEN"
+  chat_id: "YOUR_TELEGRAM_CHAT_ID"
+  enabled: true
+
+# 트레이딩 설정
+trading:
+  symbol: "BTCUSDT"
+  timeframe: "1m"  # 1m, 5m, 15m, 1h, 4h, 1d
+  initial_balance: 1000  # USDT
+  leverage: 5  # 레버리지 배수
+  fee_rate: 0.0004  # 0.04% (Binance 선물 taker 수수료)
+  position_size: 0.95  # 포지션 크기 (가용 자금의 비율)
+  stop_loss: 0.02  # 손절 비율 (2%)
+  take_profit: 0.05  # 익절 비율 (5%)
+
+# 강화학습 파라미터
+rl:
+  algorithm: "PPO"  # PPO, SAC
+  learning_rate: 2.5e-4
+  batch_size: 64
+  n_steps: 2048
+  gamma: 0.99
+  n_epochs: 10
+  ent_coef: 0.01
+  vf_coef: 0.5
+  episode_length: 1440  # 5일치 (1분봉 기준)
+  total_timesteps: 1000000
+  n_envs: 4  # 병렬 환경 수
+
+# 특성 엔지니어링 설정
+features:
+  lookback_window: 60  # 관측할 과거 틱 수
+  technical_indicators:
+    - "sma_7"  # 7일 단순이동평균
+    - "sma_25"  # 25일 단순이동평균
+    - "sma_99"  # 99일 단순이동평균
+    - "rsi_14"  # 14일 RSI
+    - "bb_20_2"  # 20일 볼린저밴드 (2 표준편차)
+    - "macd_12_26_9"  # MACD (12, 26, 9)
+    - "atr_14"  # 14일 ATR
