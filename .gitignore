@@ -1,0 +1,50 @@
+# Python 관련
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 가상환경
+venv/
+ENV/
+.env
+
+# IDE 관련
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 개인 정보 및 API 키
+config.yaml
+.env
+
+# 로그 및 데이터
+logs/
+data/
+*.log
+
+# 학습 모델
+models/*.pt
+models/*.zip
+models/*.h5
+
+# 기타
+.DS_Store
+Thumbs.db
